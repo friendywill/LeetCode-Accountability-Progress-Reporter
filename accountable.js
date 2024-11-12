@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 require('dotenv').config();
-const puppeteer = require('puppeteer');
-const nodemailer = require('nodemailer');
+import { launch } from 'puppeteer';
+import { createTransport } from 'nodemailer';
 
 async function main() {
   const loginUrl = process.env.LOGIN_URL;
@@ -10,7 +10,7 @@ async function main() {
   let browser;
 
   try {
-    browser = await puppeteer.launch({ headless: true });
+    browser = await launch({ headless: true });
     const page = await browser.newPage();
     await page.setViewport({
       width: 1920,
@@ -161,7 +161,7 @@ function constructMessage(dailyCount, totalCompleted, problems) {
 }
 
 async function sendEmail(subject, message) {
-  const transporter = nodemailer.createTransport({
+  const transporter = createTransport({
     service: 'gmail',
     auth: {
       user: process.env.EMAIL_USER,
