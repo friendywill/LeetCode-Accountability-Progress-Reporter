@@ -35,13 +35,8 @@ nodemailer to send the email via your account).
 - After creating your nodemailer password, add it to your .env file
 (see next step for more details).
 
-# Email Credentials
-EMAIL_USER=YourEmail
-EMAIL_PASS=YourNewlyCreatedAppPassword
+STEP 3: Copy the `.env.template` file to `.env`, fill out `.env`.
 
-# Recipient Email Address
-EMAIL_RECIPIENT=AccountabilityPartner@Email.com
-```
 If you login using a 3rd party, simply replace the LOGIN_URL= link: \
 Google: https://leetcode.com/accounts/google/login/?next=%2F \
 GitHub: https://leetcode.com/accounts/github/login/?next=%2F \

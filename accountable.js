@@ -131,13 +131,13 @@ async function getDailyProblems(page) {
 }
 
 function determineSubject(dailyCount) {
-  if (dailyCount >= 20) {
+  if (dailyCount >= process.env.DUDE_LEVEL) {
     return "DUDE: LeetCode Accountability";
-  } else if (dailyCount >= 15) {
+  } else if (dailyCount >= process.env.AMAZING_LEVEL) {
     return "AMAZING: LeetCode Accountability";
-  } else if (dailyCount >= 10) {
+  } else if (dailyCount >= process.env.WOW_LEVEL) {
     return "WOW: LeetCode Accountability";
-  } else if (dailyCount >= 5) {
+  } else if (dailyCount >= process.env.SUCCESS_LEVEL) {
     return "SUCCESS: LeetCode Accountability";
   } else {
     return "HELP: LeetCode Accountability";
