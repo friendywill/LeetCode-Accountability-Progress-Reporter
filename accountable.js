@@ -1,8 +1,10 @@
 #!/usr/bin/env node
 
-require('dotenv').config();
+import dotenv from 'dotenv'
 import { launch } from 'puppeteer';
 import { createTransport } from 'nodemailer';
+
+dotenv.config()
 
 async function main() {
   const loginUrl = process.env.LOGIN_URL;
